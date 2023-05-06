@@ -35,7 +35,7 @@ namespace SSD1306 {
     let charX = 0
     let charY = 0
     let displayWidth = 128
-    let displayHeight = 64 / 8
+    let displayHeight = 32 / 8
     let screenSize = 0
     //let font: Array<Array<number>>
     let loadStarted: boolean;
