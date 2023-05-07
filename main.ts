@@ -339,13 +339,13 @@ namespace SSD1306 {
         displayWidth = width
         displayHeight = height / 8
 
-        if (displayWidth == 128 && displayHeight ==32){
+        if (width == 128 && height ==32){
             command(SSD1306_SETCOMPINS);
             command(0x02);
             command(SSD1306_SETCONTRAST);
             command(0x8F);
         }
-        else if (displayWidth == 128 && displayHeight == 64){
+        else if (width == 128 && height == 64){
             command(SSD1306_SETCOMPINS);
             command(0x12);
             command(SSD1306_SETCONTRAST);
