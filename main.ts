@@ -326,7 +326,13 @@ namespace SSD1306 {
         command(SSD1306_SETDISPLAYCLOCKDIV);
         command(0x80);                                  // the suggested ratio 0x80
         command(SSD1306_SETMULTIPLEX);
-        command(0x3F);
+        // line 570 in Adafruit_SSD1306.cpp
+        if (height == 32){
+            command(0x1F);
+        }
+        else if (height == 64){
+            command(0x3F);
+        }
         command(SSD1306_SETDISPLAYOFFSET);
         command(0x0);                                   // no offset
         command(SSD1306_SETSTARTLINE | 0x0);            // line #0
