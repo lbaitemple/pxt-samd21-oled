@@ -339,13 +339,17 @@ namespace SSD1306 {
         displayWidth = width
         displayHeight = height / 8
 
-        if (displayWidth == 128 && displayHeight ==32){
+        if (width == 128 && height ==32){
+            // https://github.com/adafruit/Adafruit_SSD1306/blob/master/Adafruit_SSD1306.cpp
+            // line 589-591
             command(SSD1306_SETCOMPINS);
             command(0x02);
             command(SSD1306_SETCONTRAST);
-            command(0xAF);
+            command(0x8F);
         }
-        else if (displayWidth == 128 && displayHeight == 64){
+        else if (width == 128 && height == 64){
+            // https://github.com/adafruit/Adafruit_SSD1306/blob/master/Adafruit_SSD1306.cpp
+            // line 592-594
             command(SSD1306_SETCOMPINS);
             command(0x12);
             command(SSD1306_SETCONTRAST);
