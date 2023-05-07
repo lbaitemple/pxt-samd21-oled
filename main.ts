@@ -336,10 +336,25 @@ namespace SSD1306 {
         command(0x00);                                  // 0x0 act like ks0108
         command(SSD1306_SEGREMAP | 0x1);
         command(SSD1306_COMSCANDEC);
-        command(SSD1306_SETCOMPINS);
-        command(0x12);
-        command(SSD1306_SETCONTRAST);
-        command(0xCF);
+        displayWidth = width
+        displayHeight = height / 8
+
+        if (displayWidth == 128 && displayHeight ==32){
+            command(SSD1306_SETCOMPINS);
+            command(0x02);
+            command(SSD1306_SETCONTRAST);
+            command(0x8F);
+        }
+        else if (displayWidth == 128 && displayHeight == 64){
+            command(SSD1306_SETCOMPINS);
+            command(0x12);
+            command(SSD1306_SETCONTRAST);
+            command(0xCF);
+        } else{
+            
+        }
+
+
         command(SSD1306_SETPRECHARGE);
         command(0xF1);
         command(SSD1306_SETVCOMDETECT);
@@ -347,8 +362,7 @@ namespace SSD1306 {
         command(SSD1306_DISPLAYALLON_RESUME);
         command(SSD1306_NORMALDISPLAY);
         command(SSD1306_DISPLAYON);
-        displayWidth = width
-        displayHeight = height / 8
+
         screenSize = displayWidth * displayHeight
         charX = xOffset
         charY = yOffset
