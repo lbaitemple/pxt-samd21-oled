@@ -343,7 +343,7 @@ namespace SSD1306 {
             command(SSD1306_SETCOMPINS);
             command(0x02);
             command(SSD1306_SETCONTRAST);
-            command(0x8F);
+            command(0xAF);
         }
         else if (width == 128 && height == 64){
             command(SSD1306_SETCOMPINS);
