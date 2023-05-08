@@ -76,7 +76,8 @@ namespace SSD1306 {
      */
     //% blockId=createI2C
     //% block="create I2C at scl $scl and sda $sda "
-    //
+    //% scl.defl=PIN_SCL
+    //% sda.defl=PIN_SDA
     export function createI2C(scl: DigitalInOutPin, sda: DigitalInOutPin): void {
         _i2c = pins.createI2C(sda, scl);
     }
